@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" link href="stickheader.css">
+    <script type="module" src="./js/recipe-details.js"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <div id="header" class="sticky-header"></div>
+
+    <div class="container mx-auto px-4 mt-10">
+        <!-- Button container for "Go Back" and "Add to Shopping List" -->
+        <div class="flex justify-between mb-4">
+            <button id="goBackBtn" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700">Go Back</button>
+            <button id="addToListBtn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Add to Shopping List</button>
+        </div>
+        
+        <!-- Notification container -->
+        <div id="notification" class="hidden fixed bottom-4 right-4 text-white p-4 rounded-lg shadow-lg">
+            Ingredients added to shopping list!
+        </div>
+
+        <div id="recipeDetails" class="flex flex-col md:flex-row mb-10">
+            <!-- Recipe Image -->
+            <img id="recipeImage" src="" alt="Recipe Image" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 object-cover max-h-80">
+            
+            <!-- Recipe Details -->
+            <div class="md:ml-10">
+                <h2 id="recipeTitle" class="text-3xl font-bold mb-4"></h2>
+                <p id="recipeSummary" class="mb-4"></p>
+                <p><strong>Servings:</strong> <span id="recipeServings"></span></p>
+                <p><strong>Preparation Time:</strong> <span id="recipePrepTime"></span> minutes</p>
+                
+                <!-- Ingredients -->
+                <h3 class="text-xl font-bold mt-4">Ingredients</h3>
+                <ul id="recipeIngredients" class="list-disc list-inside"></ul>
+                
+                <!-- Nutrition Facts -->
+                <div id="nutritionContainer" class="mt-6"></div> <!-- Nutrition Facts will be appended here -->
+        
+                <!-- Instructions -->
+                <h3 class="text-xl font-bold mt-4">Instructions</h3>
+                <p id="recipeInstructions"></p>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        // Load the header.html file content into the header div
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

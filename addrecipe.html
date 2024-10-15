@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" link href="stickheader.css">
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-4 px-6 sticky-header">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <h1 class="text-2xl font-bold">Recipe Finder</h1>
+            <nav class="mt-2 md:mt-0">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="addrecipe.html" class="ml-4 hover:underline">Add Recipe</a>
+                <a href="about.html" class="ml-4 hover:underline">About</a>
+                <a href="shopping-list.html" class="ml-4 px-4 py-2 border border-green-600 rounded-lg bg-white text-green-600 hover:bg-green-600 hover:text-white transition duration-300 ease-in-out">
+                    Shopping List
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Add Recipe Section -->
+    <div class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow max-w-3xl">
+        <h2 class="text-xl font-semibold mb-4">Add a New Recipe</h2>
+        <form id="add-recipe-form">
+            <div class="mb-4">
+                <label for="recipe-name" class="block text-gray-700">Recipe Name:</label>
+                <input type="text" id="recipe-name" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="ingredients" class="block text-gray-700">Ingredients:</label>
+                <textarea id="ingredients" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="servings" class="block text-gray-700">Servings:</label>
+                <input type="number" id="servings" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="preparation-time" class="block text-gray-700">Preparation Time:</label>
+                <input type="number" id="preparation-time" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="instructions" class="block text-gray-700">Instructions:</label>
+                <textarea id="instructions" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="calories" class="block text-gray-700">Calories:</label>
+                <input type="number" id="calories" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="fat" class="block text-gray-700">Fat (g):</label>
+                <input type="number" id="fat" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="carbohydrates" class="block text-gray-700">Carbohydrates (g):</label>
+                <input type="number" id="carbohydrates" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="protein" class="block text-gray-700">Protein (g):</label>
+                <input type="number" id="protein" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="flex justify-end mt-4">
+                <button type="submit" class="px-8 py-4 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-lg shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-105">Add Recipe</button>
+            </div>
+        </form>
+        <div id="confirmation-message" class="mt-4 hidden text-green-600">Recipe added successfully!</div>
+    </div>
+
+</body>
+</html>

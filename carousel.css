@@ -1,0 +1,50 @@
+
+/* Custom Carousel Styles */
+.carousel {
+    overflow: hidden;
+    position: relative;
+    max-width: 1000px; /* Medium-large width */
+    height: 400px; /* Proportional height */
+    margin: 2rem auto; /* Center carousel */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 400px; /* Match the height of the carousel */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the space without distortion */
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Sticky Navigation Bar Styles */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensure it stays above other content */
+}

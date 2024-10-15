@@ -1,0 +1,4 @@
+/* Add background blur when modal is visible */
+body.modal-open {
+    overflow: hidden;
+}
